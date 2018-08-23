@@ -37,7 +37,7 @@ node app
 
 ##### Starting Node server
 - First install dependencies of node by running **npm install** In directory flightBooking/backend
-- Import database or make a new database named onedirect and run node app it will automatically create table and add data in them
+- By running **node app** database **onedirect** and all the table will be automatically created
 - Ensure mysql port no is default 3306
 -start node server by **node app**
 
