@@ -52,7 +52,7 @@ node app
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/homepage.png)
  
  #### Login Page
-  [Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/login.png)
+  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/login.png)
   
   #### Login Success
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/loginsuccess.png)
