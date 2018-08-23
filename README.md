@@ -1,6 +1,6 @@
 # Onedirect Task
 
-> A Vue.js project
+> A Flight Booking project in Vue.js, Node.js, MYSQL
 
 ## Build Setup
 
