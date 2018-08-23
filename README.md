@@ -49,3 +49,21 @@ node app
  ### Screen Shots
  
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/homepage.png)
+ 
+  [Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/login.png)
+  
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/loginsuccess.png)
+ 
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/loginwrong.png)
+ 
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/Register.png)
+ 
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/validation.png)
+ 
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/searchResult.png)
+ 
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/BookWithoutLogin.png)
+ 
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/bookedTicketHistor.png)
+ 
+ 
