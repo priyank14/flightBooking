@@ -48,22 +48,31 @@ node app
  - Open url **http://localhost:8080/#/home** and explore website 
  ### Screen Shots
  
+ #### Home Page
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/homepage.png)
  
+ #### Login Page
   [Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/login.png)
   
+  #### Login Success
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/loginsuccess.png)
  
+ #### Login Fail
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/loginwrong.png)
  
+ #### Registration
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/Register.png)
  
+ ### Validation
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/validation.png)
  
+ ### Searched Tickets
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/searchResult.png)
  
+ ###  Booking tickets without login
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/BookWithoutLogin.png)
  
+ ### Booked Ticket History
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/bookedTicketHistor.png)
  
  
