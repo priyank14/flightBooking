@@ -18,13 +18,21 @@ var server = app.listen(port, () => console.log('Example app listening on port' 
 const mc = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
-  database: 'onedirect'
+  password: ''
 })
 
 mc.connect(function (err) {
   if (err) throw err
   console.log('Connected!')
+  // Creating Database
+  mc.query('CREATE DATABASE IF NOT EXISTS onedirect', function (err, result) {
+    if (err) throw err
+    console.log('Database created')
+  })
+  mc.query('USE onedirect', function (err, result) {
+    if (err) throw err
+    console.log('Using oneDirect db')
+  })
   // Creating table Airports
 
   var sql = 'CREATE TABLE IF NOT EXISTS airports (id INT AUTO_INCREMENT PRIMARY KEY, city VARCHAR(255))'
