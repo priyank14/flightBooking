@@ -75,4 +75,21 @@ node app
  ### Booked Ticket History
  ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/bookedTicketHistor.png)
  
+ ### Tables
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/tables.PNG)
+ 
+  ### AirLines table
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/airline.PNG)
+ 
+  ### Airports table
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/airport.PNG)
+ 
+  ### Booking Table
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/booking.PNG)
+ 
+  ### Flights Table
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/flights.PNG)
+ 
+   ### Users Table
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/users.PNG)
  
