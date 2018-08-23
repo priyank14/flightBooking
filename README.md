@@ -48,4 +48,4 @@ node app
  - Open url **http://localhost:8080/#/home** and explore website 
  ### Screen Shots
  
- ![alt text](http://url/to/static/homepage.png)
+ ![Test Image 4](https://github.com/priyank14/flightBooking/blob/master/static/homepage.png)
