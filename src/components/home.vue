@@ -94,7 +94,7 @@
           </v-tooltip>
           <v-tooltip bottom>
             <v-btn
-              icon v-if="!login"  @click="loginDialogFunc"
+              icon v-if="!login"  @click="regisyerDialogFunc"
               slot="activator"
             >
               <v-icon>fa-sign-in</v-icon>
@@ -247,7 +247,7 @@
                     <v-layout row wrap>
                       <v-flex md12>
                         <v-card-title primary-title>
-                          <div class="text-sm-center"> Login Here </div>
+                          <div class="text-sm-center"> Register Here </div>
                         </v-card-title>
                       </v-flex>
                       <v-flex md10 offset-md1>
