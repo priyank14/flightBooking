@@ -65,7 +65,9 @@
                       <v-list-tile v-for="(airline,i) in airlines" :key="i">
                         <v-list-tile-action><v-checkbox color="info" v-model="selectedAirline" :value="airline"></v-checkbox></v-list-tile-action>
                           <v-list-tile-avatar>
-                            <img src="./../assets/airindia.jpg">
+                           <img v-if="airline == 'Indigo'" src="./../assets/indigo.jpg">
+                          <img v-if="airline == 'JetAirways'" src="./../assets/jet.jpg">
+                          <img v-if="airline == 'AirIndia'" src="./../assets/airindia.jpg">
                           </v-list-tile-avatar>
                           <v-list-tile-content>
                             <v-list-tile-title>{{airline}}</v-list-tile-title>
@@ -179,7 +181,9 @@
                 <v-list three-line subheader>
                   <v-list-tile  v-for="flight in flights" :key="flight.id" avatar class="mb-3 pa-2 elevation-2">
                     <v-list-tile-avatar>
-                      <img src="./../assets/airindia.jpg">
+                      <img v-if="flight.name == 'Indigo'" src="./../assets/indigo.jpg">
+                      <img v-if="flight.name == 'JetAirways'" src="./../assets/jet.jpg">
+                      <img v-if="flight.name == 'AirIndia'" src="./../assets/airindia.jpg">
                     </v-list-tile-avatar>
                     <v-list-tile-content>
                       <v-list-tile-title>
