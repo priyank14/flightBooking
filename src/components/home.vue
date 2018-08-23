@@ -324,9 +324,15 @@ export default {
   },
   methods: {
     filter () {
-      this.result.length = 0
-      console.log(this.result)
-      console.log(this.flights)
+      //this.result.length = 0
+      let remove = []
+      for(let i=0 ; i < this.flights.length; i++) {
+        let flight = this.flights[i]
+        if(flight.cost < this.range[0] || flight.cost > this.range[1]) {
+          this.flights.splice(i,1)
+          i--
+        }
+      }
     },
     redirect () {
       this.$router.push({path: '/history/' + this.loginData.email})
@@ -351,6 +357,12 @@ export default {
         let res = await axios.post('http://localhost:3000/book', obj)
         console.log(res.data)
         this.$swal('Good job!', 'Your Ticket has been booked!', 'success')
+          for(let i = 0; i< this.flights.length; i++) {
+          let id = this.flights[i].id
+          if(id == flightId) {
+            this.flights[i].capacity--
+          }
+        }
       }
       else {
         this.$swal(

@@ -28,14 +28,14 @@ mc.connect(function (err) {
   // Creating table Airports
 
   var sql = 'CREATE TABLE IF NOT EXISTS airports (id INT AUTO_INCREMENT PRIMARY KEY, city VARCHAR(255))'
-  // mc.query(sql, function (err, result) {
-  //   if (err) throw err
-  //   console.log('airports Table created')
-  // })
+  mc.query(sql, function (err, result) {
+    if (err) throw err
+    console.log('airports Table created')
+  })
 
-  // // Inserting data in  table airports
+  // Inserting data in  table airports
 
-  // sql = 'INSERT INTO airports (id, city) VALUES ?'
+  sql = 'INSERT INTO airports (id, city) VALUES ?'
   var values = [
     ['', 'Delhi'],
     ['', 'Jaipur'],
@@ -45,108 +45,113 @@ mc.connect(function (err) {
     ['', 'Chicago'],
     ['', 'Mumbai']
   ]
-  // mc.query(sql, [values], function (err, result) {
-  //   if (err) throw err
-  //   console.log('Number of records inserted: ' + result.affectedRows + ' in Airport table')
-  // })
-  // // Creating table Airlines
-  // sql = 'CREATE TABLE IF NOT EXISTS airlines (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255))'
-  // mc.query(sql, function (err, result) {
-  //   if (err) throw err
-  //   console.log('airlines Table created')
-  // })
+  mc.query(sql, [values], function (err, result) {
+    if (err) throw err
+    console.log('Number of records inserted: ' + result.affectedRows + ' in Airport table')
+  })
 
-  // // Inserting data in Airlines Table
-  // sql = 'INSERT INTO airlines (id, name) VALUES ?'
-  // values = [
-  //   ['', 'Indigo'],
-  //   ['', 'AirIndia'],
-  //   ['', 'JetAirways']
-  // ]
-  // mc.query(sql, [values], function (err, result) {
-  //   if (err) throw err
-  //   console.log('Number of records inserted: ' + result.affectedRows + ' in Airlines table')
-  // })
+  // Creating table Airlines
 
-  // // Creating table flights
-  // sql = 'CREATE TABLE IF NOT EXISTS flights (id INT AUTO_INCREMENT PRIMARY KEY,  name VARCHAR(255),source VARCHAR(255), destination VARCHAR(255), arrival VARCHAR(255), departure VARCHAR(255), capacity INT, cost INT, stops INT,duration VARCHAR(255))'
-  // mc.query(sql, function (err, result) {
-  //   if (err) throw err
-  //   console.log('flights Table created')
-  // })
-  // // Inserting table flights
-  // sql = 'INSERT INTO flights (id, name, source, destination, arrival, departure, capacity, cost, stops, duration) VALUES ?'
-  // values = [
-  //   ['', 'Indigo', 'Delhi', 'NewYork', '6 am', ' 2pm', 50, 4000, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Delhi', 'London', '5 pm', '7 pm', 50, 4500, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Delhi', 'Chicago', '5 pm', '7 pm', 50, 5000, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Delhi', 'Mumbai', '5 pm', '7 pm', 50, 9000, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Mumbai', 'Delhi', '5 pm', '7 pm', 50, 3000, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Mumbai', 'NewYork', '5 pm', '7 pm', 50, 9000, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Mumbai', 'London', '5 pm', '7 pm', 50, 5600, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Mumbai', 'Chicago', '5 pm', '7 pm', 50, 7500, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Jaipur', 'Mumbai', '5 pm', '7 pm', 50, 9500, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Jaipur', 'Delhi', '5 pm', '7 pm', 50, 3500, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Jaipur', 'NewYork', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Jaipur', 'Mumbai', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Chennai', 'Mumbai', '5 pm', '7 pm', 50, 9500, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Chennai', 'Delhi', '5 pm', '7 pm', 50, 3500, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Chennai', 'NewYork', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
-  //   ['', 'Indigo', 'Chennai', 'Mumbai', '5 pm', '7 pm', 50, 3600, 0, '2 hrs']
-  // ]
-  // mc.query(sql, [values], function (err, result) {
-  //   if (err) throw err
-  //   console.log('Number of records inserted: ' + result.affectedRows + ' in flights table')
-  // })
-  // sql = 'CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), password VARCHAR(255))'
-  // mc.query(sql, function (err, result) {
-  //   if (err) throw err
-  //   console.log('Users Table created')
-  // })
-  // sql = 'INSERT INTO users (id, name, email, password) VALUES ?'
-  // var values = [
-  //   ['', 'Priyank Tyagi', 'priyank@gmail.com', '123'],
-  //   ['', 'Ram', 'ram@gmail.com', '123'],
-  //   ['', 'Name1', 'test1@gmail.com', '123'],
-  //   ['', 'Name2', 'test2@gmail.com', '123']
-  // ]
-  // mc.query(sql, [values], function (err, result) {
-  //   if (err) throw err
-  //   console.log('Number of records inserted: ' + result.affectedRows + ' in Users table')
-  // })
-  //   sql = 'CREATE TABLE IF NOT EXISTS booking (id INT AUTO_INCREMENT PRIMARY KEY, user INT , flight INT, FOREIGN KEY (user) REFERENCES users(id), FOREIGN KEY (flight) REFERENCES flights(id))'
-  //   mc.query(sql, function (err, result) {
-  //     if (err) throw err
-  //     console.log('Booking Table created')
-  //   })
-  //   sql = 'INSERT INTO booking (id, user, flight) VALUES ?'
-  //   var values = [
-  //     ['', '5', '1'],
-  //     ['', '6', '2'],
-  //     ['', '7', '3'],
-  //     ['', '8', '4']
-  //   ]
-  //   mc.query(sql, [values], function (err, result) {
-  //     if (err) throw err
-  //     console.log('Number of records inserted: ' + result.affectedRows + ' in Users table')
-  //   })
-  // })
-  // sql = 'CREATE TABLE IF NOT EXISTS booking (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255) , flight INT, FOREIGN KEY (flight) REFERENCES flights(id))'
-  // mc.query(sql, function (err, result) {
-  //   if (err) throw err
-  //   console.log('Booking Table created')
-  // })
-  // sql = 'INSERT INTO booking (id, user, flight) VALUES ?'
-  // values = [
-  //   ['', 'priyank@gmail.com', '1'],
-  //   ['', 'ram@gmail.com', '2'],
-  //   ['', 'test1@gmail.com', '3'],
-  //   ['', 'test2@gmail.com', '4']
-  // ]
-  // mc.query(sql, [values], function (err, result) {
-  //   if (err) throw err
-  //   console.log('Number of records inserted: ' + result.affectedRows + ' in Booking table')
-  // })
+  sql = 'CREATE TABLE IF NOT EXISTS airlines (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255))'
+  mc.query(sql, function (err, result) {
+    if (err) throw err
+    console.log('airlines Table created')
+  })
+
+  // Inserting data in Airlines Table
+  sql = 'INSERT INTO airlines (id, name) VALUES ?'
+  values = [
+    ['', 'Indigo'],
+    ['', 'AirIndia'],
+    ['', 'JetAirways']
+  ]
+  mc.query(sql, [values], function (err, result) {
+    if (err) throw err
+    console.log('Number of records inserted: ' + result.affectedRows + ' in Airlines table')
+  })
+
+  // Creating table flights
+  sql = 'CREATE TABLE IF NOT EXISTS flights (id INT AUTO_INCREMENT PRIMARY KEY,  name VARCHAR(255),source VARCHAR(255), destination VARCHAR(255), arrival VARCHAR(255), departure VARCHAR(255), capacity INT, cost INT, stops INT,duration VARCHAR(255))'
+  mc.query(sql, function (err, result) {
+    if (err) throw err
+    console.log('flights Table created')
+  })
+  // Inserting table flights
+  sql = 'INSERT INTO flights (id, name, source, destination, arrival, departure, capacity, cost, stops, duration) VALUES ?'
+  values = [
+    ['', 'Indigo', 'Delhi', 'Jaipur', '6 am', ' 2pm', 50, 4000, 0, '2 hrs'],
+    ['', 'AirIndia', 'Delhi', 'NewYork', '5 pm', '7 pm', 50, 4500, 0, '2 hrs'],
+    ['', 'JetAirways', 'Delhi', 'Chennai', '5 pm', '7 pm', 50, 5000, 0, '2 hrs'],
+    ['', 'Indigo', 'Delhi', 'London', '5 pm', '7 pm', 50, 9000, 0, '2 hrs'],
+    ['', 'AirIndia', 'Delhi', 'Chicago', '5 pm', '7 pm', 50, 3000, 0, '2 hrs'],
+    ['', 'Indigo', 'Delhi', 'Mumbai', '5 pm', '7 pm', 50, 9000, 0, '2 hrs'],
+    ['', 'Indigo', 'Jaipur', 'Delhi', '5 pm', '7 pm', 50, 5600, 0, '2 hrs'],
+    ['', 'AirIndia', 'Jaipur', 'Chicago', '5 pm', '7 pm', 50, 7500, 0, '2 hrs'],
+    ['', 'Indigo', 'Jaipur', 'Mumbai', '5 pm', '7 pm', 50, 9500, 0, '2 hrs'],
+    ['', 'Indigo', 'Jaipur', 'Delhi', '5 pm', '7 pm', 50, 3500, 0, '2 hrs'],
+    ['', 'AirIndia', 'Jaipur', 'NewYork', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
+    ['', 'JetAirways', 'Jaipur', 'NewYork', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
+    ['', 'Indigo', 'NewYork', 'Mumbai', '5 pm', '7 pm', 50, 9500, 0, '2 hrs'],
+    ['', 'JetAirways', 'NewYork', 'Delhi', '5 pm', '7 pm', 50, 3500, 0, '2 hrs'],
+    ['', 'Indigo', 'NewYork', 'NewYork', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
+    ['', 'JetAirways', 'NewYork', 'Mumbai', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
+    ['', 'Indigo', 'NewYork', 'NewYork', '6 am', ' 2pm', 50, 4000, 0, '2 hrs'],
+    ['', 'AirIndia', 'NewYork', 'London', '5 pm', '7 pm', 50, 4500, 0, '2 hrs'],
+    ['', 'JetAirways', 'Chennai', 'Chicago', '5 pm', '7 pm', 50, 5000, 0, '2 hrs'],
+    ['', 'Indigo', 'Chennai', 'Mumbai', '5 pm', '7 pm', 50, 9000, 0, '2 hrs'],
+    ['', 'AirIndia', 'Chennai', 'Delhi', '5 pm', '7 pm', 50, 3000, 0, '2 hrs'],
+    ['', 'Indigo', 'Chennai', 'NewYork', '5 pm', '7 pm', 50, 9000, 0, '2 hrs'],
+    ['', 'Indigo', 'Chennai', 'London', '5 pm', '7 pm', 50, 5600, 0, '2 hrs'],
+    ['', 'AirIndia', 'Chennai', 'Chicago', '5 pm', '7 pm', 50, 7500, 0, '2 hrs'],
+    ['', 'Indigo', 'London', 'Mumbai', '5 pm', '7 pm', 50, 9500, 0, '2 hrs'],
+    ['', 'Indigo', 'London', 'Delhi', '5 pm', '7 pm', 50, 3500, 0, '2 hrs'],
+    ['', 'AirIndia', 'London', 'NewYork', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
+    ['', 'JetAirways', 'London', 'Mumbai', '5 pm', '7 pm', 50, 3600, 0, '2 hrs'],
+    ['', 'Indigo', 'London', 'Mumbai', '5 pm', '7 pm', 50, 9500, 0, '2 hrs']
+  ]
+  mc.query(sql, [values], function (err, result) {
+    if (err) throw err
+    console.log('Number of records inserted: ' + result.affectedRows + ' in flights table')
+  })
+
+  // Creating table users
+
+  sql = 'CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), password VARCHAR(255))'
+  mc.query(sql, function (err, result) {
+    if (err) throw err
+    console.log('Users Table created')
+  })
+  // Inserting table users
+  sql = 'INSERT INTO users (id, name, email, password) VALUES ?'
+  values = [
+    ['', 'Priyank Tyagi', 'priyank@gmail.com', '123'],
+    ['', 'Ram', 'ram@gmail.com', '123'],
+    ['', 'Name1', 'test1@gmail.com', '123'],
+    ['', 'Name2', 'test2@gmail.com', '123']
+  ]
+  mc.query(sql, [values], function (err, result) {
+    if (err) throw err
+    console.log('Number of records inserted: ' + result.affectedRows + ' in Users table')
+  })
+
+  // Creating table books
+
+  sql = 'CREATE TABLE IF NOT EXISTS booking (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255) , flight INT, FOREIGN KEY (flight) REFERENCES flights(id))'
+  mc.query(sql, function (err, result) {
+    if (err) throw err
+    console.log('Booking Table created')
+  })
+  sql = 'INSERT INTO booking (id, user, flight) VALUES ?'
+  values = [
+    ['', 'priyank@gmail.com', '1'],
+    ['', 'ram@gmail.com', '2'],
+    ['', 'test1@gmail.com', '3'],
+    ['', 'test2@gmail.com', '4']
+  ]
+  mc.query(sql, [values], function (err, result) {
+    if (err) throw err
+    console.log('Number of records inserted: ' + result.affectedRows + ' in Booking table')
+  })
 })
 
 app.get('/getAirports', (req, res) => {
